@@ -26,17 +26,17 @@ const Card = ({ x }) => {
 
 
             <div className='flex items-center gap-2 mb-3 mt-auto'>
+
+                <div className={`flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-sm h-6  ${x.ribbon === "Bestseller" ? "bg-teal-100 text-cyan-900 " : "bg-violet-700 text-fuchsia-100"} font-bold`}>
+                    {x.ribbon === "Premium" ? <BadgeCheck className='w-3 h-3' /> : <></>}
+                    <span className='text-xs font-semibold'>{x.ribbon}</span>
+                </div>
+
                 <div className='flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-sm h-6'>
                     <Star className='w-3 h-3 fill-current' />
                     <span className='text-xs font-semibold'>{x.rating}</span>
                 </div>
 
-                {x.ribbon && (
-                    <div className='flex items-center gap-1 px-2 py-1 border border-gray-300 rounded-sm h-6 bg-teal-100 text-cyan-900 font-bold'>
-                        <BadgeCheck className='w-3 h-3' />
-                        <span className='text-xs font-semibold'>{x.ribbon}</span>
-                    </div>
-                )}
 
                 <div className='flex items-center px-2 py-1 border border-gray-300 rounded-sm h-6'>
                     <span className='text-xs text-gray-600'>({x.reviews} rating)</span>
